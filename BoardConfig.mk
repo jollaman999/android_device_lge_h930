@@ -21,8 +21,9 @@ DEVICE_PATH := device/lge/h930
 
 TARGET_OTA_ASSERT_DEVICE := v30,joan,h930
 
-# Kernel
-TARGET_KERNEL_CONFIG := jolla-kernel_kr_defconfig
+TARGET_PREBUILT_KERNEL := device/lge/h930/prebuilt-kernel/Image.gz-dtb
+PRODUCT_COPY_FILES += \
+	$(TARGET_PREBUILT_KERNEL):kernel
 
 # inherit from the proprietary version
 -include vendor/lge/h930/BoardConfigVendor.mk
